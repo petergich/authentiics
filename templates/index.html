@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {%load static%}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Authentics</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{%static "scripts.js"%}"></script>
+    <link rel="stylesheet" href="{% static "style1.css"%}" >
+    <link rel="stylesheet" href="{% static "style2.css"%}" >
+  </head>
+  <body>
+    <header>
+    <nav class="navbar">
+      <h1 id="paragraph">Authentic hub👢</h1>
+      <ul class="navbar-nav">
+        <li class="home"><p>Home</p></li>
+        <li class="about"><p>About</p></li>
+        <li class="login"><p><i class="fa fa-user login-icon"></i></p>
+          <div class="eldropdown">
+            <p>Login</p>
+            <p>Signup</p>
+          </div>
+        </li>
+        <li><p><i class="fas fa-phone"></i></p>
+          <div class="eldropdown">
+            <a href="https://api.whatsapp.com/send?phone=+254725346932"><p>
+                <i class="fab fa-whatsapp whatsapp-icon"></i> 0725346932
+              </p>
+            </a>
+            <a href="tel:+254725346932">
+              <p>
+                <i class="fas fa-phone call-icon"></i>0725346932
+              </p>
+            </a>
+            <a href="mailto:scavengermwas@gmail.com">
+              <p>
+                <i class="far fa-envelope"></i>
+               scavengermwas@gmail.com
+              </p>
+            </a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </header>
+    <div class="content">
+    <div class="search">
+      <div class="search-container" >
+        <input style="border:1px solid #000000;"type="text" id="searchBar" onkeyup="processor(this.value)"name="search" placeholder="Search...">
+        <button  onclick="submitSearch()">
+          <i class="fas fa-search"></i>
+        </button>
+        <div class="dropdown">
+          <div class="dropdown-content" id="optionsList"></div>
+        </div>
+      </div>
+    </div>
+    {%if items%}
+      <div class="card-container">
+        {%for item in items%}
+        <div class="card">
+            <img
+              src="{{item.image.url}}"
+              alt="Shoe"
+            />
+            <div class="info">
+            <h1>{{item.name}}</h1></a>
+            <h2>KSH {{item.price}}<h2>
+            <button class="btn btn-warning"onclick="selectOption('{{item.id}}')">Buy Now</button>
+            </div>
+        </div>
+        {%endfor%}
+      </div>
+    <br>
+    <br>
+    {%else%}
+    <div>
+      <h1 class="display">THERE ARE NO AVAILABLE SHOES YET</h>
+
+    </div>
+    {%endif%}
+    {% comment %} <div class="contacts">
+      <div class="whatsapp">
+        <a href="https://api.whatsapp.com/send?phone=+254725346932">
+          <p>
+            <i class="fab fa-whatsapp whatsapp-icon"></i> 0725346932</p></a>
+      </div>
+      <div class="call">
+        <p>
+          <i class="fas fa-phone call-icon"></i> +25425346932</p></a>
+      </div>
+      <div class="email">
+        <a href="mailto:scavengermwas@gmail.com">
+          <p>
+            <i class="far fa-envelope"></i>
+           scavengermwas@gmail.com</p></a>
+      </div>
+    </div> {% endcomment %}
+  </div>
+  <footer>
+    <div class="footercontacts">
+      <a href="https://api.whatsapp.com/send?phone=+254725346932">
+      <p>
+        <i class="fab fa-whatsapp whatsapp-icon"></i> 0725346932</p></a>
+      <a href="tel:+254725346932">
+      <p>
+        <i class="fas fa-phone call-icon"></i> +25425346932</p></a>
+      <a href="mailto:scavengermwas@gmail.com">
+      <p>
+        <i class="far fa-envelope"></i>
+       scavengermwas@gmail.com</p></a>
+    </div>
+    <div class="copy">
+      Copyright © petergichdesigns
+    </div>
+  </footer>
+</body>
+<html>

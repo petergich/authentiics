@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {%load static%}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Authentics</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="{% static "style1.css"%}" >
+  </head>
+  <body>
+    <header>
+    <nav class="navbar">
+      <h1>Authentics
+        Shoes🥿
+      </h1>
+      <ul class="navbar-nav">
+        <li class="home"><p>Home</p></li>
+        <li class="about"><p>About</p></li>
+        <li class="login"><p><i class="fa fa-user login-icon"></i></p>
+          <div class="eldropdown">
+            <p>Login</p>
+            <p>Signup</p>
+          </div>
+        </li>
+        <li><p><i class="fas fa-phone"></i></p>
+          <div class="eldropdown">
+            <a href="https://api.whatsapp.com/send?phone=+254725346932"><p>
+                <i class="fab fa-whatsapp whatsapp-icon"></i> 0725346932
+              </p>
+                  </a>
+            <a href="tel:+254725346932">
+              <p>
+                <i class="fas fa-phone call-icon"></i>0725346932
+              </p>
+            </a>
+            <a href="mailto:scavengermwas@gmail.com">
+              <p>
+                <i class="far fa-envelope"></i>
+               scavengermwas@gmail.com
+              </p>
+            </a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </header>
+    {%if item%}
+        <div class="item">
+            <img
+              src="{{item.image.url}}"
+              alt="Shoe"
+            />
+            <div class="itemdescription">
+            <h1>{{item.name}}</h1>
+            <h2>Price: </h2>
+            <h3>KSH {{item.price}}</h3>
+            </div>
+        </div>
+      </div>
+    {%endif%}
+    <div class="contacts">
+      <div class="whatsapp">
+        <a href="https://api.whatsapp.com/send?phone=+254725346932">
+          <p>
+            <i class="fab fa-whatsapp whatsapp-icon"></i> 0725346932</p></a>
+      </div>
+      <div class="call">
+        <p>
+          <i class="fas fa-phone call-icon"></i> +25425346932</p></a>
+      </div>
+      <div class="email">
+        <a href="mailto:scavengermwas@gmail.com">
+          <p>
+            <i class="far fa-envelope"></i>
+           scavengermwas@gmail.com</p></a>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="footercontacts">
+      <a href="https://api.whatsapp.com/send?phone=+254725346932">
+      <p>
+        <i class="fab fa-whatsapp whatsapp-icon"></i> 0725346932</p></a>
+      <a href="tel:+254725346932">
+      <p>
+        <i class="fas fa-phone call-icon"></i> +25425346932</p></a>
+      <a href="mailto:scavengermwas@gmail.com">
+      <p>
+        <i class="far fa-envelope"></i>
+       scavengermwas@gmail.com</p></a>
+    </div>
+    <div class="copy">
+      Copyright © petergichdesigns
+    </div>
+  </footer>
+</body>
+<html>
